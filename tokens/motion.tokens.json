@@ -1,0 +1,85 @@
+{
+  "$description": "Exported from Figma collection \"Baseline / Motion\". Do not edit by hand — edit in Figma and re-export.",
+  "duration": {
+    "base": {
+      "$type": "duration",
+      "$value": "200ms",
+      "$extensions": {
+        "com.figma": {
+          "css": "--duration-base"
+        }
+      }
+    },
+    "fast": {
+      "$type": "duration",
+      "$value": "120ms",
+      "$extensions": {
+        "com.figma": {
+          "css": "--duration-fast"
+        }
+      }
+    },
+    "instant": {
+      "$type": "duration",
+      "$value": "0ms",
+      "$extensions": {
+        "com.figma": {
+          "css": "--duration-instant"
+        }
+      }
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "320ms",
+      "$extensions": {
+        "com.figma": {
+          "css": "--duration-slow"
+        }
+      }
+    }
+  },
+  "easing": {
+    "enter": {
+      "$type": "cubicBezier",
+      "$value": [
+        0,
+        0,
+        0.2,
+        1
+      ],
+      "$extensions": {
+        "com.figma": {
+          "css": "--easing-enter"
+        }
+      }
+    },
+    "exit": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.4,
+        0,
+        1,
+        1
+      ],
+      "$extensions": {
+        "com.figma": {
+          "css": "--easing-exit"
+        }
+      }
+    },
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.2,
+        0,
+        0,
+        1
+      ],
+      "$extensions": {
+        "com.figma": {
+          "css": "--easing-standard"
+        }
+      }
+    }
+  }
+}

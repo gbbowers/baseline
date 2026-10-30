@@ -1,0 +1,87 @@
+/* Input — mirrors Figma "Input" (Default / Hover / Focus / Error / Disabled).
+ *   <div class="bl-field">
+ *     <label class="bl-field__label" for="email">Email</label>
+ *     <input class="bl-input" id="email" type="email" aria-describedby="email-help">
+ *     <p class="bl-field__help" id="email-help">We'll only use this for receipts.</p>
+ *   </div>
+ * Error: add aria-invalid="true" to the input and .bl-field__help--error (with an icon) to the help text.
+ * Helper text stays grey in every state — the border and icon carry the error signal. */
+
+.bl-field { display: flex; flex-direction: column; gap: var(--space-8); }
+
+.bl-field__label {
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-14);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-default);
+}
+
+.bl-field__help {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin: 0;
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-12);
+  color: var(--color-text-subtle);
+}
+.bl-field__help > svg { width: var(--icon-16); height: var(--icon-16); flex: none; fill: currentColor; }
+.bl-field__help--error > svg { fill: var(--color-feedback-alert-icon); }
+
+.bl-input {
+  width: 100%;
+  min-height: var(--control-40);
+  padding: 0 var(--space-12);
+  border: var(--stroke-1) solid var(--color-border-input);
+  border-radius: var(--shape-radius-control);
+  background: var(--color-surface-default);
+  color: var(--color-text-default);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-16);
+  transition: border-color var(--duration-fast) var(--easing-standard), box-shadow var(--duration-fast) var(--easing-standard);
+}
+.bl-input::placeholder { color: var(--color-text-subtle); opacity: 1; }
+.bl-input:hover { border-color: var(--color-border-input-hover); }
+
+/* Focus thickens the border to 2px (1px border + 1px ring) without shifting layout. */
+.bl-input:focus,
+.bl-input:focus-visible {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 var(--stroke-1) var(--color-border-focus);
+}
+
+.bl-input[aria-invalid="true"] {
+  border-color: var(--color-feedback-alert-icon);
+  box-shadow: 0 0 0 var(--stroke-1) var(--color-feedback-alert-icon);
+}
+
+.bl-input:disabled {
+  background: var(--color-action-disabled-bg);
+  border-color: var(--color-border-default);
+  color: var(--color-text-disabled);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+.bl-input:disabled::placeholder { color: var(--color-text-disabled); }
+
+textarea.bl-input {
+  min-height: calc(var(--control-40) * 2);
+  padding: var(--space-8) var(--space-12);
+  resize: vertical;
+}
+
+/* Leading icon: wrap the input. */
+.bl-input-group { position: relative; display: flex; }
+.bl-input-group > svg {
+  position: absolute;
+  left: var(--space-12);
+  top: 50%;
+  translate: 0 -50%;
+  width: var(--icon-20);
+  height: var(--icon-20);
+  fill: var(--color-text-subtle);
+  pointer-events: none;
+}
+.bl-input-group > .bl-input { padding-left: calc(var(--space-12) + var(--icon-20) + var(--space-8)); }

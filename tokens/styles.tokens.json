@@ -1,0 +1,243 @@
+{
+  "$description": "Text and effect styles exported from Figma. Values reference variables where bound.",
+  "type": {
+    "display": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.display}",
+        "fontWeight": "{weight.extrabold}",
+        "fontSize": "{size.96}",
+        "lineHeight": "{lineheight.for-96}",
+        "letterSpacing": "-0.015em"
+      },
+      "$description": "Marketing, Large-scale hero"
+    },
+    "display-s": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.display}",
+        "fontWeight": "{weight.extrabold}",
+        "fontSize": "{size.80}",
+        "lineHeight": "{lineheight.for-80}",
+        "letterSpacing": "-0.015em"
+      },
+      "$description": "Marketing, Statement Text"
+    },
+    "headline-l": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.display}",
+        "fontWeight": "{weight.extrabold}",
+        "fontSize": "{size.64}",
+        "lineHeight": "{lineheight.for-64}",
+        "letterSpacing": "-0.015em"
+      },
+      "$description": "Marketing, Hero headlines"
+    },
+    "headline": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.display}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.56}",
+        "lineHeight": "{lineheight.for-56}",
+        "letterSpacing": "0em"
+      },
+      "$description": "Marketing, Editorial titles"
+    },
+    "headline-s": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.display}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.48}",
+        "lineHeight": "{lineheight.for-48}",
+        "letterSpacing": "0em"
+      },
+      "$description": "Marketing, Feature headlines"
+    },
+    "section-heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.40}",
+        "lineHeight": "{lineheight.for-40}",
+        "letterSpacing": "0em"
+      },
+      "$description": "Marketing, content sections"
+    },
+    "page-heading-l": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.32}",
+        "lineHeight": "{lineheight.for-32}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, Primary page titles"
+    },
+    "page-heading": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.28}",
+        "lineHeight": "{lineheight.for-28}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, compact page titles"
+    },
+    "section-title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.24}",
+        "lineHeight": "{lineheight.for-24}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, Panels & content groups"
+    },
+    "lead-card-title": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.medium}",
+        "fontSize": "{size.20}",
+        "lineHeight": "{lineheight.for-20}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, Introductions"
+    },
+    "body-l": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.regular}",
+        "fontSize": "{size.16}",
+        "lineHeight": "{lineheight.for-16}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, Copy, buttons, navigation"
+    },
+    "body-s": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.regular}",
+        "fontSize": "{size.14}",
+        "lineHeight": "{lineheight.for-14}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, Smaller copy, labels"
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.regular}",
+        "fontSize": "{size.12}",
+        "lineHeight": "{lineheight.for-12}",
+        "letterSpacing": "0em"
+      },
+      "$description": "App, Metadata & Helper text"
+    },
+    "label-l": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.16}",
+        "lineHeight": "{lineheight.for-16}",
+        "letterSpacing": "0em"
+      },
+      "$description": "UI label: buttons, form labels, tags."
+    },
+    "label": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.14}",
+        "lineHeight": "{lineheight.for-14}",
+        "letterSpacing": "0em"
+      },
+      "$description": "UI label: buttons, form labels, tags."
+    },
+    "label-s": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{family.body}",
+        "fontWeight": "{weight.semibold}",
+        "fontSize": "{size.12}",
+        "lineHeight": "{lineheight.for-12}",
+        "letterSpacing": "0em"
+      },
+      "$description": "UI label: buttons, form labels, tags."
+    }
+  },
+  "shadow": {
+    "elevation": {
+      "raised": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": "{elevation.shadow}",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "{elevation.shadow}",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$description": "Cards that need lift off a same-color surface. Prefer surface color + border first."
+      },
+      "overlay": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": "{elevation.shadow}",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "12px",
+            "spread": "0px",
+            "inset": false
+          },
+          {
+            "color": "{elevation.shadow}",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$description": "Menus, popovers, tooltips — anything floating above content."
+      },
+      "modal": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": "{elevation.shadow-strong}",
+            "offsetX": "0px",
+            "offsetY": "16px",
+            "blur": "48px",
+            "spread": "0px",
+            "inset": false
+          }
+        ],
+        "$description": "Dialogs and sheets. Pair with surface/scrim."
+      }
+    }
+  }
+}

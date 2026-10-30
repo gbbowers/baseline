@@ -1,0 +1,40 @@
+/* Tag — mirrors Figma "Tag" (Tone × Emphasis).
+ *   <span class="bl-tag bl-tag--affirm"><svg aria-hidden="true">…</svg>Paid</span>
+ *   <span class="bl-tag bl-tag--alert bl-tag--strong">Overdue</span>
+ * Tones: neutral (default), guide, affirm, inform, warn, alert. Never rely on color alone. */
+
+.bl-tag {
+  --_bg: var(--color-surface-sunken);
+  --_fg: var(--color-text-default);
+  --_icon: var(--color-text-subtle);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: var(--control-24);
+  padding: 0 var(--space-8);
+  border-radius: var(--shape-radius-badge);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-12);
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.bl-tag > svg { width: var(--icon-16); height: var(--icon-16); flex: none; fill: var(--_icon); }
+
+.bl-tag--strong { --_bg: var(--color-surface-inverse); --_fg: var(--color-text-inverse); --_icon: var(--color-text-inverse); }
+
+.bl-tag--guide  { --_bg: var(--color-feedback-guide-bg-subtle);  --_icon: var(--color-feedback-guide-icon); }
+.bl-tag--affirm { --_bg: var(--color-feedback-affirm-bg-subtle); --_icon: var(--color-feedback-affirm-icon); }
+.bl-tag--inform { --_bg: var(--color-feedback-inform-bg-subtle); --_icon: var(--color-feedback-inform-icon); }
+.bl-tag--warn   { --_bg: var(--color-feedback-warn-bg-subtle);   --_icon: var(--color-feedback-warn-icon); }
+.bl-tag--alert  { --_bg: var(--color-feedback-alert-bg-subtle);  --_icon: var(--color-feedback-alert-icon); }
+
+.bl-tag--guide.bl-tag--strong  { --_bg: var(--color-feedback-guide-bg-strong);  --_fg: var(--color-feedback-guide-fg-on-strong);  --_icon: var(--_fg); }
+.bl-tag--affirm.bl-tag--strong { --_bg: var(--color-feedback-affirm-bg-strong); --_fg: var(--color-feedback-affirm-fg-on-strong); --_icon: var(--_fg); }
+.bl-tag--inform.bl-tag--strong { --_bg: var(--color-feedback-inform-bg-strong); --_fg: var(--color-feedback-inform-fg-on-strong); --_icon: var(--_fg); }
+.bl-tag--warn.bl-tag--strong   { --_bg: var(--color-feedback-warn-bg-strong);   --_fg: var(--color-feedback-warn-fg-on-strong);   --_icon: var(--_fg); }
+.bl-tag--alert.bl-tag--strong  { --_bg: var(--color-feedback-alert-bg-strong);  --_fg: var(--color-feedback-alert-fg-on-strong);  --_icon: var(--_fg); }

@@ -1,0 +1,24 @@
+{
+  "name": "baseline-design-system",
+  "version": "0.1.0",
+  "description": "Baseline — a themeable, Figma-led design system: tokens, framework-agnostic CSS components and docs.",
+  "private": true,
+  "type": "module",
+  "files": ["dist", "css", "assets", "tokens"],
+  "exports": {
+    ".": "./dist/baseline.css",
+    "./tokens.css": "./dist/tokens.css",
+    "./typography.css": "./dist/typography.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./css/*": "./css/*",
+    "./icons/*": "./assets/icons/*"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-contrast.mjs",
+    "check:verbose": "node scripts/check-contrast.mjs --verbose",
+    "ramp": "node scripts/ramp.mjs",
+    "preview": "node scripts/build.mjs && echo \"Open examples/index.html in a browser\""
+  },
+  "engines": { "node": ">=18" }
+}

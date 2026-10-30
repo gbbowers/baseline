@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baseline — Component reference</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;800&display=swap">
+  <link rel="stylesheet" href="../dist/baseline.css">
+  <style>
+    /* Page scaffolding only — everything inside .demo uses Baseline classes and tokens. */
+    .page { max-width: var(--layout-1280); margin: 0 auto; padding: var(--space-48) var(--space-24) var(--space-96); }
+    .masthead { display: flex; flex-wrap: wrap; gap: var(--space-24); align-items: flex-end; justify-content: space-between; padding-bottom: var(--space-32); border-bottom: var(--stroke-1) solid var(--color-border-faint); }
+    .masthead h1 { margin: 0; color: var(--color-text-strong); }
+    .masthead p { margin: var(--space-8) 0 0; color: var(--color-text-subtle); max-width: 56ch; }
+    section { padding: var(--space-48) 0 0; }
+    section > h2 { margin: 0 0 var(--space-4); color: var(--color-text-strong); }
+    section > p { margin: 0 0 var(--space-24); color: var(--color-text-subtle); max-width: 64ch; }
+    .row { display: flex; flex-wrap: wrap; gap: var(--space-12); align-items: center; }
+    .stack { display: flex; flex-direction: column; gap: var(--space-16); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--space-24); align-items: start; }
+    .label { width: 100%; margin: var(--space-8) 0 0; font-size: var(--font-size-12); line-height: var(--line-height-12); color: var(--color-text-subtle); }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--space-12); }
+    .swatch { border: var(--stroke-1) solid var(--color-border-faint); border-radius: var(--shape-radius-control); overflow: hidden; background: var(--color-surface-default); }
+    .swatch > div { height: var(--control-56); }
+    .swatch code { display: block; padding: var(--space-8); font-size: var(--font-size-12); line-height: var(--line-height-12); color: var(--color-text-subtle); word-break: break-all; }
+    .ramp { display: grid; grid-template-columns: 96px repeat(10, 1fr); gap: 2px; align-items: center; font-size: var(--font-size-12); color: var(--color-text-subtle); }
+    .ramp > div { height: var(--control-32); }
+    .type-specimen > * { margin: 0 0 var(--space-12); color: var(--color-text-strong); }
+    .theme-toggle { display: inline-flex; gap: var(--space-4); padding: var(--space-4); border-radius: var(--shape-radius-control); background: var(--color-surface-sunken); }
+    .theme-toggle [aria-pressed="true"] { --_bg: var(--color-surface-default); --_fg: var(--color-text-strong); }
+  </style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo3YTQwZDkxNy0yYzMzLTQ1ZmMtOGRkZC1jZWY5M2RjNDM5OTAAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaGWSwA+RO1h2jn+4yvKQN3IAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpiNzdiZGI4Ny1hODI5LTQ5YjktOWI1OS0xZGNiOGQ4OWEzZGRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoPTaV0LcpRQy3DWfxb7HjygAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggGg+TDmg5f6KKuwZkzn6fMFn8rB1zXLpvHcWKjRgMEoakZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIsImv5Ii6HOlnuFeMFHCfEAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCApAFeI+5wse9GTzZvFDbSPRj0oD0+qumt2iRmxdAtSJGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBh8Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjdhNDBkOTE3LTJjMzMtNDVmYy04ZGRkLWNlZjkzZGM0Mzk5MC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjc4MzQ4NDhlLTVkZDMtNDc0YS04NzU2LTU2ZTkwMTJiMjYxNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAaD5MOaDl/ooq7BmTOfp8wWfysHXNcum8dxYqNGAwShqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggfiqRAfX09hVLH+zrYDTKp+jWOHgrqgiSpr/nV+ujLiuiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggeIFN7tVGo+Q2bEt4HD3pbeA32lqqXPZZBsl5pvjRpXN0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQBX2Nu/JqFFtNdHFsAzvEpB5HKivWSa3P0YK5+Vs577qJANfeshw3rgRiCiocdk3Z1uWPXZqaPuDPQMcDS9iwUw=</c2pa:manifest></metadata>
+  <symbol id="i-guide" viewBox="0 0 256 256"><path d="M174,232a6,6,0,0,1-6,6H88a6,6,0,0,1,0-12h80A6,6,0,0,1,174,232Zm40-128a85.56,85.56,0,0,1-32.88,67.64A18.23,18.23,0,0,0,174,186v6a14,14,0,0,1-14,14H96a14,14,0,0,1-14-14v-6a18,18,0,0,0-7-14.23h0a85.59,85.59,0,0,1-33-67.24C41.74,57.91,79.39,19.12,125.93,18A86,86,0,0,1,214,104Zm-12,0a74,74,0,0,0-75.79-74C86.17,31,53.78,64.34,54,104.42a73.67,73.67,0,0,0,28.4,57.87A29.92,29.92,0,0,1,94,186v6a2,2,0,0,0,2,2h64a2,2,0,0,0,2-2v-6a30.18,30.18,0,0,1,11.7-23.78A73.59,73.59,0,0,0,202,104Zm-20.08-9A55.58,55.58,0,0,0,137,50.08a6,6,0,1,0-2,11.84C152.38,64.84,167.13,79.6,170.08,97a6,6,0,0,0,5.91,5,6.87,6.87,0,0,0,1-.08A6,6,0,0,0,181.92,95Z"/></symbol>
+  <symbol id="i-affirm" viewBox="0 0 256 256"><path d="M172.24,99.76a6,6,0,0,1,0,8.48l-56,56a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L112,151.51l51.76-51.75A6,6,0,0,1,172.24,99.76ZM222,48V208a14,14,0,0,1-14,14H48a14,14,0,0,1-14-14V48A14,14,0,0,1,48,34H208A14,14,0,0,1,222,48Zm-12,0a2,2,0,0,0-2-2H48a2,2,0,0,0-2,2V208a2,2,0,0,0,2,2H208a2,2,0,0,0,2-2Z"/></symbol>
+  <symbol id="i-inform" viewBox="0 0 256 256"><path d="M142,176a6,6,0,0,1-6,6,14,14,0,0,1-14-14V128a2,2,0,0,0-2-2,6,6,0,0,1,0-12,14,14,0,0,1,14,14v40a2,2,0,0,0,2,2A6,6,0,0,1,142,176ZM124,94a10,10,0,1,0-10-10A10,10,0,0,0,124,94Zm106,34A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 256 256"><path d="M235.07,189.09,147.61,37.22h0a22.75,22.75,0,0,0-39.22,0L20.93,189.09a21.53,21.53,0,0,0,0,21.72A22.35,22.35,0,0,0,40.55,222h174.9a22.35,22.35,0,0,0,19.6-11.19A21.53,21.53,0,0,0,235.07,189.09ZM224.66,204.8a10.46,10.46,0,0,1-9.21,5.2H40.55a10.46,10.46,0,0,1-9.21-5.2,9.51,9.51,0,0,1,0-9.72L118.79,43.21a10.75,10.75,0,0,1,18.42,0l87.46,151.87A9.51,9.51,0,0,1,224.66,204.8ZM122,144V104a6,6,0,0,1,12,0v40a6,6,0,0,1-12,0Zm16,36a10,10,0,1,1-10-10A10,10,0,0,1,138,180Z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 256 256"><path d="M122,136V80a6,6,0,0,1,12,0v56a6,6,0,0,1-12,0Zm6,26a10,10,0,1,0,10,10A10,10,0,0,0,128,162Zm110-34a13.82,13.82,0,0,1-4.09,9.86l-96,96.06a14,14,0,0,1-19.72,0h0l-96-96.06a13.93,13.93,0,0,1,0-19.72l96.05-96.06a14,14,0,0,1,19.72,0l96,96.06A13.82,13.82,0,0,1,238,128Zm-12,0a1.94,1.94,0,0,0-.57-1.38L129.38,30.56a2,2,0,0,0-2.76,0L30.57,126.62a2,2,0,0,0,0,2.76l96.05,96.06h0a2,2,0,0,0,2.76,0l96.05-96.06A1.94,1.94,0,0,0,226,128Z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 256 256"><path d="M204.24,195.76a6,6,0,1,1-8.48,8.48L128,136.49,60.24,204.24a6,6,0,0,1-8.48-8.48L119.51,128,51.76,60.24a6,6,0,0,1,8.48-8.48L128,119.51l67.76-67.75a6,6,0,0,1,8.48,8.48L136.49,128Z"/></symbol>
+  <symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M212.24,100.24l-80,80a6,6,0,0,1-8.48,0l-80-80a6,6,0,0,1,8.48-8.48L128,167.51l75.76-75.75a6,6,0,0,1,8.48,8.48Z"/></symbol>
+  <symbol id="i-magnifying-glass" viewBox="0 0 256 256"><path d="M228.24,219.76l-51.38-51.38a86.15,86.15,0,1,0-8.48,8.48l51.38,51.38a6,6,0,0,0,8.48-8.48ZM38,112a74,74,0,1,1,74,74A74.09,74.09,0,0,1,38,112Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 256 256"><path d="M222,128a6,6,0,0,1-6,6H134v82a6,6,0,0,1-12,0V134H40a6,6,0,0,1,0-12h82V40a6,6,0,0,1,12,0v82h82A6,6,0,0,1,222,128Z"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M220.24,132.24l-72,72a6,6,0,0,1-8.48-8.48L201.51,134H40a6,6,0,0,1,0-12H201.51L139.76,60.24a6,6,0,0,1,8.48-8.48l72,72A6,6,0,0,1,220.24,132.24Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 256 256"><path d="M241.87,69.66l-24-23.56a14,14,0,0,0-19.77,0L104,139,65.9,102.1a14,14,0,0,0-19.8,0l-24,24a14,14,0,0,0,0,19.79l71.62,72a14,14,0,0,0,19.8,0L241.91,89.5A14,14,0,0,0,241.87,69.66ZM233.42,81,105,209.41a2,2,0,0,1-2.81,0l-71.62-72a2,2,0,0,1,0-2.82l24-24A2,2,0,0,1,56,110a2.12,2.12,0,0,1,1.5.64l42.35,41.08a6,6,0,0,0,8.39,0l98.37-97.11a2,2,0,0,1,2.87,0l24,23.56A2,2,0,0,1,233.42,81Z"/></symbol>
+</svg>
+<main class="page">
+  <header class="masthead">
+    <div>
+      <p class="bl-card__eyebrow">Baseline design system</p>
+      <h1 class="bl-text-headline-s">Component reference</h1>
+      <p>Every value on this page comes from <code>dist/baseline.css</code>, which is generated from the Figma variables. Re-theme by swapping <code>tokens/theme.tokens.json</code> and rebuilding.</p>
+    </div>
+    <div class="theme-toggle" role="group" aria-label="Color mode">
+      <button class="bl-button bl-button--tertiary bl-button--sm" data-mode="system" aria-pressed="true">System</button>
+      <button class="bl-button bl-button--tertiary bl-button--sm" data-mode="light" aria-pressed="false">Light</button>
+      <button class="bl-button bl-button--tertiary bl-button--sm" data-mode="dark" aria-pressed="false">Dark</button>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="bl-text-section-title">Theme ramps</h2>
+    <p>Role-named primitives from <code>theme.tokens.json</code>. Components never touch these directly; they go through the semantic layer.</p>
+    <div class="stack"><div class="ramp"><span>primary</span><div style="background:var(--primary-050)" title="--primary-050"></div><div style="background:var(--primary-100)" title="--primary-100"></div><div style="background:var(--primary-200)" title="--primary-200"></div><div style="background:var(--primary-300)" title="--primary-300"></div><div style="background:var(--primary-400)" title="--primary-400"></div><div style="background:var(--primary-500)" title="--primary-500"></div><div style="background:var(--primary-600)" title="--primary-600"></div><div style="background:var(--primary-700)" title="--primary-700"></div><div style="background:var(--primary-800)" title="--primary-800"></div><div style="background:var(--primary-900)" title="--primary-900"></div></div><div class="ramp"><span>accent</span><div style="background:var(--accent-050)" title="--accent-050"></div><div style="background:var(--accent-100)" title="--accent-100"></div><div style="background:var(--accent-200)" title="--accent-200"></div><div style="background:var(--accent-300)" title="--accent-300"></div><div style="background:var(--accent-400)" title="--accent-400"></div><div style="background:var(--accent-500)" title="--accent-500"></div><div style="background:var(--accent-600)" title="--accent-600"></div><div style="background:var(--accent-700)" title="--accent-700"></div><div style="background:var(--accent-800)" title="--accent-800"></div><div style="background:var(--accent-900)" title="--accent-900"></div></div><div class="ramp"><span>secondary</span><div style="background:var(--secondary-050)" title="--secondary-050"></div><div style="background:var(--secondary-100)" title="--secondary-100"></div><div style="background:var(--secondary-200)" title="--secondary-200"></div><div style="background:var(--secondary-300)" title="--secondary-300"></div><div style="background:var(--secondary-400)" title="--secondary-400"></div><div style="background:var(--secondary-500)" title="--secondary-500"></div><div style="background:var(--secondary-600)" title="--secondary-600"></div><div style="background:var(--secondary-700)" title="--secondary-700"></div><div style="background:var(--secondary-800)" title="--secondary-800"></div><div style="background:var(--secondary-900)" title="--secondary-900"></div></div><div class="ramp"><span>neutral</span><div style="background:var(--neutral-050)" title="--neutral-050"></div><div style="background:var(--neutral-100)" title="--neutral-100"></div><div style="background:var(--neutral-200)" title="--neutral-200"></div><div style="background:var(--neutral-300)" title="--neutral-300"></div><div style="background:var(--neutral-400)" title="--neutral-400"></div><div style="background:var(--neutral-500)" title="--neutral-500"></div><div style="background:var(--neutral-600)" title="--neutral-600"></div><div style="background:var(--neutral-700)" title="--neutral-700"></div><div style="background:var(--neutral-800)" title="--neutral-800"></div><div style="background:var(--neutral-900)" title="--neutral-900"></div></div><div class="ramp"><span>guide</span><div style="background:var(--guide-050)" title="--guide-050"></div><div style="background:var(--guide-100)" title="--guide-100"></div><div style="background:var(--guide-200)" title="--guide-200"></div><div style="background:var(--guide-300)" title="--guide-300"></div><div style="background:var(--guide-400)" title="--guide-400"></div><div style="background:var(--guide-500)" title="--guide-500"></div><div style="background:var(--guide-600)" title="--guide-600"></div><div style="background:var(--guide-700)" title="--guide-700"></div><div style="background:var(--guide-800)" title="--guide-800"></div><div style="background:var(--guide-900)" title="--guide-900"></div></div><div class="ramp"><span>affirm</span><div style="background:var(--affirm-050)" title="--affirm-050"></div><div style="background:var(--affirm-100)" title="--affirm-100"></div><div style="background:var(--affirm-200)" title="--affirm-200"></div><div style="background:var(--affirm-300)" title="--affirm-300"></div><div style="background:var(--affirm-400)" title="--affirm-400"></div><div style="background:var(--affirm-500)" title="--affirm-500"></div><div style="background:var(--affirm-600)" title="--affirm-600"></div><div style="background:var(--affirm-700)" title="--affirm-700"></div><div style="background:var(--affirm-800)" title="--affirm-800"></div><div style="background:var(--affirm-900)" title="--affirm-900"></div></div><div class="ramp"><span>inform</span><div style="background:var(--inform-050)" title="--inform-050"></div><div style="background:var(--inform-100)" title="--inform-100"></div><div style="background:var(--inform-200)" title="--inform-200"></div><div style="background:var(--inform-300)" title="--inform-300"></div><div style="background:var(--inform-400)" title="--inform-400"></div><div style="background:var(--inform-500)" title="--inform-500"></div><div style="background:var(--inform-600)" title="--inform-600"></div><div style="background:var(--inform-700)" title="--inform-700"></div><div style="background:var(--inform-800)" title="--inform-800"></div><div style="background:var(--inform-900)" title="--inform-900"></div></div><div class="ramp"><span>warn</span><div style="background:var(--warn-050)" title="--warn-050"></div><div style="background:var(--warn-100)" title="--warn-100"></div><div style="background:var(--warn-200)" title="--warn-200"></div><div style="background:var(--warn-300)" title="--warn-300"></div><div style="background:var(--warn-400)" title="--warn-400"></div><div style="background:var(--warn-500)" title="--warn-500"></div><div style="background:var(--warn-600)" title="--warn-600"></div><div style="background:var(--warn-700)" title="--warn-700"></div><div style="background:var(--warn-800)" title="--warn-800"></div><div style="background:var(--warn-900)" title="--warn-900"></div></div><div class="ramp"><span>alert</span><div style="background:var(--alert-050)" title="--alert-050"></div><div style="background:var(--alert-100)" title="--alert-100"></div><div style="background:var(--alert-200)" title="--alert-200"></div><div style="background:var(--alert-300)" title="--alert-300"></div><div style="background:var(--alert-400)" title="--alert-400"></div><div style="background:var(--alert-500)" title="--alert-500"></div><div style="background:var(--alert-600)" title="--alert-600"></div><div style="background:var(--alert-700)" title="--alert-700"></div><div style="background:var(--alert-800)" title="--alert-800"></div><div style="background:var(--alert-900)" title="--alert-900"></div></div></div>
+  </section>
+
+  <section>
+    <h2 class="bl-text-section-title">Semantic surfaces</h2>
+    <p>Depth comes from surface color first, then borders; shadows are for floating layers.</p>
+    <div class="swatches"><div class="swatch"><div style="background:var(--color-surface-page)"></div><code>surface/page</code></div><div class="swatch"><div style="background:var(--color-surface-default)"></div><code>surface/default</code></div><div class="swatch"><div style="background:var(--color-surface-raised)"></div><code>surface/raised</code></div><div class="swatch"><div style="background:var(--color-surface-sunken)"></div><code>surface/sunken</code></div><div class="swatch"><div style="background:var(--color-surface-inverse)"></div><code>surface/inverse</code></div><div class="swatch"><div style="background:var(--color-surface-brand)"></div><code>surface/brand</code></div><div class="swatch"><div style="background:var(--color-surface-highlight)"></div><code>surface/highlight</code></div><div class="swatch"><div style="background:var(--color-surface-warm)"></div><code>surface/warm</code></div><div class="swatch"><div style="background:var(--color-surface-selected)"></div><code>surface/selected</code></div></div>
+  </section>
+
+  <section class="type-specimen">
+    <h2 class="bl-text-section-title" style="margin-bottom: var(--space-24)">Type</h2>
+    <p class="bl-text-display-s">Display S</p>
+    <p class="bl-text-headline">Headline</p>
+    <p class="bl-text-page-heading">Page heading</p>
+    <p class="bl-text-section-title">Section title</p>
+    <p class="bl-text-lead-card-title">Lead / card title</p>
+    <p class="bl-text-body-l" style="color: var(--color-text-default)">Body L — the default reading size for copy, with a 24px line height on the base-4 grid.</p>
+    <p class="bl-text-body-s" style="color: var(--color-text-default)">Body S — denser copy, tables, secondary detail.</p>
+    <p class="bl-text-caption" style="color: var(--color-text-subtle)">Caption — metadata and helper text.</p>
+  </section>
+
+  <section>
+    <h2 class="bl-text-section-title">Button</h2>
+    <p>Primary is the single highest-emphasis action in a view. Tab through to see the shared focus ring.</p>
+    <div class="stack">
+      <div class="row">
+        <button class="bl-button bl-button--sm">Small</button>
+        <button class="bl-button">Primary</button>
+        <button class="bl-button bl-button--lg">Large<svg aria-hidden="true"><use href="#i-arrow-right"/></svg></button>
+        <button class="bl-button" aria-disabled="true">Disabled</button>
+      </div>
+      <div class="row">
+        <button class="bl-button bl-button--secondary bl-button--sm">Small</button>
+        <button class="bl-button bl-button--secondary"><svg aria-hidden="true"><use href="#i-plus"/></svg>Secondary</button>
+        <button class="bl-button bl-button--secondary bl-button--lg">Large</button>
+        <button class="bl-button bl-button--secondary" disabled>Disabled</button>
+      </div>
+      <div class="row">
+        <button class="bl-button bl-button--tertiary bl-button--sm">Small</button>
+        <a class="bl-button bl-button--tertiary" href="#">Tertiary link</a>
+        <button class="bl-button bl-button--tertiary bl-button--icon" aria-label="Search"><svg aria-hidden="true"><use href="#i-magnifying-glass"/></svg></button>
+        <button class="bl-button bl-button--tertiary" disabled>Disabled</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="bl-text-section-title">Input</h2>
+    <p>Errors are carried by the border and an icon. Helper text stays grey.</p>
+    <div class="grid">
+      <div class="bl-field">
+        <label class="bl-field__label" for="f1">Name</label>
+        <input class="bl-input" id="f1" placeholder="Jane Appleseed" aria-describedby="f1h">
+        <p class="bl-field__help" id="f1h">As it appears on your résumé.</p>
+      </div>
+      <div class="bl-field">
+        <label class="bl-field__label" for="f2">Search</label>
+        <div class="bl-input-group">
+          <svg aria-hidden="true"><use href="#i-magnifying-glass"/></svg>
+          <input class="bl-input" id="f2" type="search" placeholder="Find a project">
+        </div>
+      </div>
+      <div class="bl-field">
+        <label class="bl-field__label" for="f3">Email</label>
+        <input class="bl-input" id="f3" value="jane@" aria-invalid="true" aria-describedby="f3h">
+        <p class="bl-field__help bl-field__help--error" id="f3h"><svg aria-hidden="true"><use href="#i-alert"/></svg>Add the rest of the address, like jane@example.com.</p>
+      </div>
+      <div class="bl-field">
+        <label class="bl-field__label" for="f4">Workspace</label>
+        <input class="bl-input" id="f4" value="Read-only for now" disabled>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="bl-text-section-title">Tag</h2>
+    <p>Subtle by default; strong only for high-salience status. Every tone keeps its icon or a clear label.</p>
+    <div class="stack">
+      <div class="row"><span class="bl-tag"><svg aria-hidden="true"><use href="#i-inform"/></svg>Draft</span><span class="bl-tag bl-tag--guide"><svg aria-hidden="true"><use href="#i-guide"/></svg>Tip</span><span class="bl-tag bl-tag--affirm"><svg aria-hidden="true"><use href="#i-affirm"/></svg>Paid</span><span class="bl-tag bl-tag--inform"><svg aria-hidden="true"><use href="#i-inform"/></svg>Synced</span><span class="bl-tag bl-tag--warn"><svg aria-hidden="true"><use href="#i-warn"/></svg>Due soon</span><span class="bl-tag bl-tag--alert"><svg aria-hidden="true"><use href="#i-alert"/></svg>Overdue</span></div>
+      <div class="row"><span class="bl-tag bl-tag--strong"><svg aria-hidden="true"><use href="#i-inform"/></svg>Draft</span><span class="bl-tag bl-tag--guide bl-tag--strong"><svg aria-hidden="true"><use href="#i-guide"/></svg>Tip</span><span class="bl-tag bl-tag--affirm bl-tag--strong"><svg aria-hidden="true"><use href="#i-affirm"/></svg>Paid</span><span class="bl-tag bl-tag--inform bl-tag--strong"><svg aria-hidden="true"><use href="#i-inform"/></svg>Synced</span><span class="bl-tag bl-tag--warn bl-tag--strong"><svg aria-hidden="true"><use href="#i-warn"/></svg>Due soon</span><span class="bl-tag bl-tag--alert bl-tag--strong"><svg aria-hidden="true"><use href="#i-alert"/></svg>Overdue</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="bl-text-section-title">Callout — GAIWA</h2>
+    <p>Guide, Affirm, Inform, Warn, Alert. Color and icon carry the type; copy carries the meaning.</p>
+    <div class="grid"><div class="bl-callout bl-callout--guide" role="status"><svg aria-hidden="true"><use href="#i-guide"/></svg><div class="bl-callout__body"><p class="bl-callout__title">Here’s a shortcut</p><p class="bl-callout__text">Drag a file anywhere on the page to upload it — no need to open the dialog.</p></div><button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="bl-callout bl-callout--affirm" role="status"><svg aria-hidden="true"><use href="#i-affirm"/></svg><div class="bl-callout__body"><p class="bl-callout__title">Résumé exported</p><p class="bl-callout__text">Your PDF is ready in Downloads. The share link stays live for 30 days.</p></div><button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="bl-callout bl-callout--inform" role="status"><svg aria-hidden="true"><use href="#i-inform"/></svg><div class="bl-callout__body"><p class="bl-callout__title">Syncs nightly</p><p class="bl-callout__text">Changes made in Figma show up here after the next export and build.</p></div><button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="bl-callout bl-callout--warn" role="status"><svg aria-hidden="true"><use href="#i-warn"/></svg><div class="bl-callout__body"><p class="bl-callout__title">Two contrast pairs are close</p><p class="bl-callout__text">Dark-mode input borders sit at 3.8:1. Fine for AA, but watch them when re-theming.</p></div><button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div><div class="bl-callout bl-callout--alert" role="alert"><svg aria-hidden="true"><use href="#i-alert"/></svg><div class="bl-callout__body"><p class="bl-callout__title">Export failed</p><p class="bl-callout__text">The theme file has an unresolved alias. Fix shape/radius-control, then export again.</p></div><button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss"><svg aria-hidden="true"><use href="#i-x"/></svg></button></div></div>
+  </section>
+
+  <section>
+    <h2 class="bl-text-section-title">Card</h2>
+    <p>Flat cards separate with a faint border; raised cards are for content that floats.</p>
+    <div class="grid">
+      <article class="bl-card">
+        <div class="bl-card__header"><p class="bl-card__eyebrow">Case study</p><h3 class="bl-card__title">Rebuilding onboarding</h3></div>
+        <p class="bl-card__body">How a three-step flow replaced a twelve-field form and cut drop-off in half.</p>
+        <div class="bl-card__actions"><a class="bl-button bl-button--secondary bl-button--sm" href="#">Read the story</a></div>
+      </article>
+      <article class="bl-card bl-card--raised">
+        <div class="bl-card__header"><p class="bl-card__eyebrow">Raised</p><h3 class="bl-card__title">Floating summary</h3></div>
+        <p class="bl-card__body">Use for popovers, sticky summaries and anything that sits above the page.</p>
+        <div class="bl-card__actions"><span class="bl-tag bl-tag--affirm"><svg aria-hidden="true"><use href="#i-affirm"/></svg>Shipped</span></div>
+      </article>
+      <article class="bl-card">
+        <div class="bl-card__header"><p class="bl-card__eyebrow">Nested</p><h3 class="bl-card__title">Cards inside cards</h3></div>
+        <div class="bl-card"><p class="bl-card__body">Inner cards step the radius down and sit on the sunken surface.</p></div>
+      </article>
+    </div>
+  </section>
+</main>
+<script>
+  const root = document.documentElement;
+  const set = (mode) => {
+    if (mode === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', mode);
+    document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    try { localStorage.setItem('bl-mode', mode); } catch (e) {}
+  };
+  document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => set(b.dataset.mode)));
+  try { const saved = localStorage.getItem('bl-mode'); if (saved) set(saved); } catch (e) {}
+  const q = new URLSearchParams(location.search).get('mode'); if (q) set(q);
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 12px/1.5 Inter, system-ui, sans-serif; margin: 0; padding: 16px; color: var(--figma-color-text); background: var(--figma-color-bg); }
+  h2 { font-size: 13px; margin: 0 0 4px; }
+  p { margin: 0 0 12px; color: var(--figma-color-text-secondary); }
+  section { padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid var(--figma-color-border); }
+  button { font: inherit; font-weight: 600; padding: 8px 12px; border-radius: 6px; border: 0; cursor: pointer; background: var(--figma-color-bg-brand); color: var(--figma-color-text-onbrand); }
+  button.secondary { background: transparent; color: var(--figma-color-text); border: 1px solid var(--figma-color-border); }
+  textarea { width: 100%; box-sizing: border-box; height: 120px; font: 11px/1.4 ui-monospace, monospace; margin-bottom: 8px; background: var(--figma-color-bg-secondary); color: var(--figma-color-text); border: 1px solid var(--figma-color-border); border-radius: 6px; padding: 8px; }
+  ul { margin: 8px 0 0; padding-left: 16px; }
+  #status { min-height: 18px; color: var(--figma-color-text-secondary); }
+  .row { display: flex; gap: 8px; }
+</style>
+
+<section>
+  <h2>Export tokens</h2>
+  <p>Downloads one DTCG file per collection plus styles. Save them into <code>tokens/</code>, then run <code>npm run build</code>.</p>
+  <div class="row">
+    <button id="export">Export &amp; download</button>
+    <button id="copy" class="secondary" disabled>Copy all as JSON</button>
+  </div>
+  <ul id="files"></ul>
+</section>
+
+<section style="border: 0">
+  <h2>Import theme</h2>
+  <p>Paste a <code>theme.tokens.json</code> (e.g. from <code>npm run ramp</code>) to bootstrap a new project's Theme collection. Creates or updates variables; never deletes.</p>
+  <textarea id="theme" placeholder='{ "primary": { "500": { "$type": "color", "$value": "#347154" } } }'></textarea>
+  <button id="import">Import into “Baseline / Theme”</button>
+</section>
+
+<div id="status"></div>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  let last = null;
+  const status = (t) => ($('status').textContent = t);
+  const download = (name, data) => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json' }));
+    a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+  $('export').onclick = () => { status('Exporting…'); parent.postMessage({ pluginMessage: { type: 'export' } }, '*'); };
+  $('copy').onclick = async () => {
+    const ta = document.createElement('textarea');
+    ta.value = JSON.stringify(last, null, 2); document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); ta.remove(); status('Copied all files as one JSON object (keyed by filename).');
+  };
+  $('import').onclick = () => {
+    try { JSON.parse($('theme').value); } catch (e) { return status('That isn’t valid JSON: ' + e.message); }
+    status('Importing…'); parent.postMessage({ pluginMessage: { type: 'import-theme', json: $('theme').value } }, '*');
+  };
+  onmessage = ({ data }) => {
+    const msg = data.pluginMessage;
+    if (msg.type === 'exported') {
+      last = msg.files; $('copy').disabled = false;
+      $('files').innerHTML = '';
+      Object.entries(msg.files).forEach(([name, json], i) => {
+        setTimeout(() => download(name, json), i * 250);
+        const li = document.createElement('li'); li.textContent = name; $('files').appendChild(li);
+      });
+      status(`Exported ${Object.keys(msg.files).length} files.`);
+    } else if (msg.type === 'imported') {
+      const m = msg.result.missing || [];
+      status(`Wrote ${msg.result.written} values.` + (m.length ? ` Unresolved aliases: ${m.join(', ')}` : ''));
+    } else if (msg.type === 'error') status('Error: ' + msg.message);
+  };
+</script>

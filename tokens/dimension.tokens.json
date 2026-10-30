@@ -1,0 +1,485 @@
+{
+  "$description": "Exported from Figma collection \"Baseline / Dimension tokens\". Do not edit by hand — edit in Figma and re-export.",
+  "avatar": {
+    "24": {
+      "$type": "dimension",
+      "$value": "{scale.24}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-24"
+        }
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "{scale.32}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-32"
+        }
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "{scale.40}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-40"
+        }
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "{scale.48}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-48"
+        }
+      }
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "{scale.64}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-64"
+        }
+      }
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": "{scale.80}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-80"
+        }
+      }
+    },
+    "96": {
+      "$type": "dimension",
+      "$value": "{scale.96}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--avatar-96"
+        }
+      }
+    }
+  },
+  "control": {
+    "24": {
+      "$type": "dimension",
+      "$value": "{scale.24}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-24"
+        }
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "{scale.32}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-32"
+        }
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "{scale.40}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-40"
+        }
+      }
+    },
+    "44": {
+      "$type": "dimension",
+      "$value": "{scale.44}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-44"
+        }
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "{scale.48}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-48"
+        }
+      }
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": "{scale.56}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-56"
+        }
+      }
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "{scale.64}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--control-64"
+        }
+      }
+    }
+  },
+  "icon": {
+    "12": {
+      "$type": "dimension",
+      "$value": "{scale.12}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-12"
+        }
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "{scale.16}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-16"
+        }
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "{scale.20}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-20"
+        }
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "{scale.24}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-24"
+        }
+      }
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": "{scale.28}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-28"
+        }
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "{scale.32}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-32"
+        }
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "{scale.40}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-40"
+        }
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "{scale.48}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--icon-48"
+        }
+      }
+    }
+  },
+  "layout": {
+    "256": {
+      "$type": "dimension",
+      "$value": "{scale.256}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-256"
+        }
+      }
+    },
+    "320": {
+      "$type": "dimension",
+      "$value": "{scale.320}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-320"
+        }
+      }
+    },
+    "480": {
+      "$type": "dimension",
+      "$value": "{scale.480}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-480"
+        }
+      }
+    },
+    "640": {
+      "$type": "dimension",
+      "$value": "{scale.640}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-640"
+        }
+      }
+    },
+    "768": {
+      "$type": "dimension",
+      "$value": "{scale.768}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-768"
+        }
+      }
+    },
+    "960": {
+      "$type": "dimension",
+      "$value": "{scale.960}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-960"
+        }
+      }
+    },
+    "1280": {
+      "$type": "dimension",
+      "$value": "{scale.1280}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--layout-1280"
+        }
+      }
+    }
+  },
+  "radius": {
+    "0": {
+      "$type": "dimension",
+      "$value": "{scale.0}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-0"
+        }
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "{scale.4}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-4"
+        }
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "{scale.8}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-8"
+        }
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "{scale.12}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-12"
+        }
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "{scale.16}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-16"
+        }
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "{scale.24}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-24"
+        }
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "{scale.32}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--radius-32"
+        }
+      }
+    }
+  },
+  "spacing": {
+    "0": {
+      "$type": "dimension",
+      "$value": "{scale.0}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-0"
+        }
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "{scale.4}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-4"
+        }
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "{scale.8}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-8"
+        }
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "{scale.12}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-12"
+        }
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "{scale.16}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-16"
+        }
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "{scale.20}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-20"
+        }
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "{scale.24}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-24"
+        }
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "{scale.32}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-32"
+        }
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "{scale.40}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-40"
+        }
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "{scale.48}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-48"
+        }
+      }
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "{scale.64}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-64"
+        }
+      }
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": "{scale.80}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-80"
+        }
+      }
+    },
+    "96": {
+      "$type": "dimension",
+      "$value": "{scale.96}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-96"
+        }
+      }
+    },
+    "128": {
+      "$type": "dimension",
+      "$value": "{scale.128}",
+      "$extensions": {
+        "com.figma": {
+          "css": "--space-128"
+        }
+      }
+    }
+  },
+  "stroke": {
+    "1": {
+      "$type": "dimension",
+      "$value": "1px",
+      "$extensions": {
+        "com.figma": {
+          "css": "--stroke-1"
+        }
+      }
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$extensions": {
+        "com.figma": {
+          "css": "--stroke-2"
+        }
+      }
+    }
+  }
+}

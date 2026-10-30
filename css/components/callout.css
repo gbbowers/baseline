@@ -1,0 +1,51 @@
+/* Callout — GAIWA message block; mirrors Figma "Callout" (Type = Guide/Affirm/Inform/Warn/Alert).
+ *   <div class="bl-callout bl-callout--warn" role="status">
+ *     <svg aria-hidden="true">…warning…</svg>
+ *     <div class="bl-callout__body">
+ *       <p class="bl-callout__title">Check this first</p>
+ *       <p class="bl-callout__text">Something needs attention before it becomes a problem.</p>
+ *     </div>
+ *     <button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss">…x…</button>
+ *   </div>
+ * role="alert" is for Alert only (it interrupts screen readers). Text stays grey in every type. */
+
+.bl-callout {
+  --_bg: var(--color-feedback-inform-bg);
+  --_border: var(--color-feedback-inform-border);
+  --_icon: var(--color-feedback-inform-icon);
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  border: var(--stroke-1) solid var(--_border);
+  border-radius: var(--shape-radius-control);
+  background: var(--_bg);
+  color: var(--color-text-default);
+}
+.bl-callout > svg:first-child { width: var(--icon-24); height: var(--icon-24); flex: none; fill: var(--_icon); }
+
+.bl-callout__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-14);
+}
+.bl-callout__title {
+  margin: 0;
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-16);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-strong);
+}
+.bl-callout__text { margin: 0; }
+.bl-callout__dismiss { margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0 0; --_fg: var(--color-text-subtle); }
+
+.bl-callout--guide  { --_bg: var(--color-feedback-guide-bg);  --_border: var(--color-feedback-guide-border);  --_icon: var(--color-feedback-guide-icon); }
+.bl-callout--affirm { --_bg: var(--color-feedback-affirm-bg); --_border: var(--color-feedback-affirm-border); --_icon: var(--color-feedback-affirm-icon); }
+.bl-callout--inform { --_bg: var(--color-feedback-inform-bg); --_border: var(--color-feedback-inform-border); --_icon: var(--color-feedback-inform-icon); }
+.bl-callout--warn   { --_bg: var(--color-feedback-warn-bg);   --_border: var(--color-feedback-warn-border);   --_icon: var(--color-feedback-warn-icon); }
+.bl-callout--alert  { --_bg: var(--color-feedback-alert-bg);  --_border: var(--color-feedback-alert-border);  --_icon: var(--color-feedback-alert-icon); }

@@ -1,0 +1,45 @@
+/* Card — mirrors Figma "Card" (Elevation = Flat / Raised).
+ *   <article class="bl-card">
+ *     <p class="bl-card__eyebrow">Case study</p>
+ *     <h3 class="bl-card__title">Card title</h3>
+ *     <p class="bl-card__body">Supporting copy.</p>
+ *     <div class="bl-card__actions"><a class="bl-button bl-button--secondary bl-button--sm" href="…">Read</a></div>
+ *   </article>
+ * Elevation order: surface color first, border second (Flat), shadow only when it must float (Raised). */
+
+.bl-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-24);
+  border: var(--stroke-1) solid var(--color-border-faint);
+  border-radius: var(--shape-radius-container);
+  background: var(--color-surface-default);
+  color: var(--color-text-default);
+}
+.bl-card--raised { border-color: transparent; box-shadow: var(--shadow-elevation-raised); }
+
+/* Header groups eyebrow + title tightly (Figma "header" frame, 4px gap). */
+.bl-card__header { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.bl-card__eyebrow {
+  margin: 0;
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-12);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+}
+.bl-card__title {
+  margin: 0;
+  font-size: var(--font-size-20);
+  line-height: var(--line-height-20);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-strong);
+}
+.bl-card__body { margin: 0; font-size: var(--font-size-14); line-height: var(--line-height-14); }
+.bl-card__actions { display: flex; flex-wrap: wrap; gap: var(--space-8); }
+
+/* Nested cards step the radius down one level and sit on the sunken surface. */
+.bl-card .bl-card { border-radius: var(--shape-radius-control); background: var(--color-surface-sunken); border-color: transparent; }

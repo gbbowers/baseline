@@ -1,0 +1,87 @@
+/* Button — mirrors Figma "Button" (Style × Size × State).
+ *   <button class="bl-button">Save</button>
+ *   <button class="bl-button bl-button--secondary bl-button--sm">Cancel</button>
+ *   <a class="bl-button bl-button--tertiary" href="…">Learn more</a>
+ * Private --_* properties hold the per-variant tokens; variants only swap them. */
+
+.bl-button {
+  --_bg: var(--color-action-primary-bg);
+  --_bg-hover: var(--color-action-primary-bg-hover);
+  --_bg-pressed: var(--color-action-primary-bg-pressed);
+  --_fg: var(--color-action-primary-fg);
+  --_border: transparent;
+  --_height: var(--control-40);
+  --_px: var(--space-16);
+  --_gap: var(--space-8);
+  --_font-size: var(--font-size-16);
+  --_line-height: var(--line-height-16);
+  --_icon: var(--icon-20);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--_gap);
+  min-height: var(--_height);
+  padding: 0 var(--_px);
+  border: var(--stroke-1) solid var(--_border);
+  border-radius: var(--shape-radius-control);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--font-family-body);
+  font-size: var(--_font-size);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--_line-height);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+.bl-button:hover { background: var(--_bg-hover); color: var(--_fg); }
+.bl-button:active { background: var(--_bg-pressed); }
+.bl-button > svg { width: var(--_icon); height: var(--_icon); flex: none; fill: currentColor; }
+
+/* Styles */
+.bl-button--secondary {
+  --_bg: var(--color-action-secondary-bg);
+  --_bg-hover: var(--color-action-secondary-bg-hover);
+  --_bg-pressed: var(--color-action-secondary-bg-pressed);
+  --_fg: var(--color-action-secondary-fg);
+  --_border: var(--color-action-secondary-border);
+}
+.bl-button--tertiary {
+  --_bg: transparent;
+  --_bg-hover: var(--color-surface-hover);
+  --_bg-pressed: var(--color-surface-pressed);
+  --_fg: var(--color-action-tertiary-fg);
+}
+
+/* Sizes (Medium is the default) */
+.bl-button--sm {
+  --_height: var(--control-32);
+  --_px: var(--space-12);
+  --_gap: var(--space-4);
+  --_font-size: var(--font-size-14);
+  --_line-height: var(--line-height-14);
+  --_icon: var(--icon-16);
+}
+.bl-button--lg { --_height: var(--control-48); --_px: var(--space-24); }
+
+/* Icon-only: square; always give it an aria-label. */
+.bl-button--icon { padding: 0; width: var(--_height); }
+
+/* Disabled — prefer aria-disabled so the control stays focusable and can explain itself. */
+.bl-button:disabled,
+.bl-button[aria-disabled="true"] {
+  --_bg: var(--color-action-disabled-bg);
+  --_bg-hover: var(--color-action-disabled-bg);
+  --_bg-pressed: var(--color-action-disabled-bg);
+  --_fg: var(--color-action-disabled-fg);
+  --_border: transparent;
+  cursor: not-allowed;
+}
+.bl-button--tertiary:disabled,
+.bl-button--tertiary[aria-disabled="true"] { --_bg: transparent; --_bg-hover: transparent; --_bg-pressed: transparent; }

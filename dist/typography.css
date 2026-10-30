@@ -1,0 +1,145 @@
+/* Baseline text styles — GENERATED from Figma text styles. */
+
+/* Marketing, Large-scale hero */
+.bl-text-display {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-96);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-96);
+  letter-spacing: -0.015em;
+}
+
+/* Marketing, Statement Text */
+.bl-text-display-s {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-80);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-80);
+  letter-spacing: -0.015em;
+}
+
+/* Marketing, Hero headlines */
+.bl-text-headline-l {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-64);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-64);
+  letter-spacing: -0.015em;
+}
+
+/* Marketing, Editorial titles */
+.bl-text-headline {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-56);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-56);
+  letter-spacing: normal;
+}
+
+/* Marketing, Feature headlines */
+.bl-text-headline-s {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-48);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-48);
+  letter-spacing: normal;
+}
+
+/* Marketing, content sections */
+.bl-text-section-heading {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-40);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-40);
+  letter-spacing: normal;
+}
+
+/* App, Primary page titles */
+.bl-text-page-heading-l {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-32);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-32);
+  letter-spacing: normal;
+}
+
+/* App, compact page titles */
+.bl-text-page-heading {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-28);
+  letter-spacing: normal;
+}
+
+/* App, Panels & content groups */
+.bl-text-section-title {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-24);
+  letter-spacing: normal;
+}
+
+/* App, Introductions */
+.bl-text-lead-card-title {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-20);
+  letter-spacing: normal;
+}
+
+/* App, Copy, buttons, navigation */
+.bl-text-body-l {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-16);
+  letter-spacing: normal;
+}
+
+/* App, Smaller copy, labels */
+.bl-text-body-s {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-14);
+  letter-spacing: normal;
+}
+
+/* App, Metadata & Helper text */
+.bl-text-caption {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-12);
+  letter-spacing: normal;
+}
+
+/* UI label: buttons, form labels, tags. */
+.bl-text-label-l {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-16);
+  letter-spacing: normal;
+}
+
+/* UI label: buttons, form labels, tags. */
+.bl-text-label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-14);
+  letter-spacing: normal;
+}
+
+/* UI label: buttons, form labels, tags. */
+.bl-text-label-s {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-12);
+  letter-spacing: normal;
+}
