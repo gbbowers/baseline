@@ -12,7 +12,7 @@ An inline message block for the five [GAIWA](../foundations/messaging.md) types.
     <p class="bl-callout__title">Renewal reminders are off</p>
     <p class="bl-callout__text">With less than 30 days left, we won't send reminders. Set one manually if you need it.</p>
   </div>
-  <button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss">
+  <button class="bl-icon-button bl-icon-button--sm bl-callout__dismiss" aria-label="Dismiss">
     <svg aria-hidden="true">…x…</svg>
   </button>
 </div>

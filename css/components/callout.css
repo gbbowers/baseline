@@ -5,7 +5,7 @@
  *       <p class="bl-callout__title">Check this first</p>
  *       <p class="bl-callout__text">Something needs attention before it becomes a problem.</p>
  *     </div>
- *     <button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss">…x…</button>
+ *     <button class="bl-icon-button bl-icon-button--sm bl-callout__dismiss" aria-label="Dismiss">…x…</button>
  *   </div>
  * role="alert" is for Alert only (it interrupts screen readers). Text stays grey in every type. */
 
@@ -42,7 +42,7 @@
   color: var(--color-text-strong);
 }
 .bl-callout__text { margin: 0; }
-.bl-callout__dismiss { margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0 0; --_fg: var(--color-text-subtle); }
+.bl-callout .bl-callout__dismiss { margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0 0; --_fg: var(--color-text-subtle); }
 
 .bl-callout--guide  { --_bg: var(--color-feedback-guide-bg);  --_border: var(--color-feedback-guide-border);  --_icon: var(--color-feedback-guide-icon); }
 .bl-callout--affirm { --_bg: var(--color-feedback-affirm-bg); --_border: var(--color-feedback-affirm-border); --_icon: var(--color-feedback-affirm-icon); }

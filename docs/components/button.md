@@ -10,7 +10,6 @@ Triggers an action. For navigation, use a link; you can style an `<a>` as a butt
 <button class="bl-button bl-button--secondary">Cancel</button>
 <a class="bl-button bl-button--tertiary" href="/docs">Read the docs</a>
 <button class="bl-button bl-button--secondary bl-button--sm"><svg aria-hidden="true">…plus…</svg>Add</button>
-<button class="bl-button bl-button--tertiary bl-button--icon" aria-label="Search"><svg aria-hidden="true">…</svg></button>
 ```
 
 ## Styles
@@ -31,7 +30,7 @@ There's no "destructive" style. For irreversible actions, confirm with a dialog 
 | Medium | (default) | `control/40` | `Label-L` 16 | 20 |
 | Large | `--lg` | `control/48` | `Label-L` 16 | 20 |
 
-Icon-only: add `--icon` (square) and an `aria-label`.
+Icon-only: use [Icon Button](icon-button.md) (`bl-icon-button`). `--icon` remains for making another Button style square, and still needs an `aria-label`.
 
 ## States
 

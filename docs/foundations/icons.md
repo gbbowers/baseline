@@ -16,7 +16,7 @@ The icons the components use are in `assets/icons/` (individual SVGs, plus `spri
 
 - Color follows `currentColor`. Set color on the parent, not on the icon.
 - Decorative icons get `aria-hidden="true"`. Icon-only buttons need an `aria-label` on the button.
-- In Figma, Button exposes **Leading/Trailing icon swap** properties. Elsewhere, use a normal instance swap to any `Icon/*` component. Recolor through the icon's `Vector` layer fill.
+- In Figma, Button exposes **Leading/Trailing icon swap** properties and Icon Button exposes an **Icon** swap. Elsewhere, use a normal instance swap to any `Icon/*` component. Recolor through the icon's `Vector` layer fill.
 
 ## Sizes
 

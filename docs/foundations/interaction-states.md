@@ -7,7 +7,7 @@ One state vocabulary for every interactive component. Component docs reference t
 | **Default** | Resting | Variant | (base) |
 | **Hover** | Pointer over a target that will respond | Variant | `:hover` |
 | **Pressed** | Being activated | Variant | `:active` |
-| **Focus** | Has keyboard focus | Variant on Button and Input, for handoff only | `:focus-visible` |
+| **Focus** | Has keyboard focus | Variant on Button, Icon Button and Input, for handoff only | `:focus-visible` |
 | **Disabled** | Unavailable | Variant | `:disabled` / `[aria-disabled="true"]` |
 | **Error** | Invalid input (fields only) | Variant | `[aria-invalid="true"]` |
 

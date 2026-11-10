@@ -52,8 +52,8 @@ Open [`examples/index.html`](examples/index.html) for every component in light a
 - [Start a new project from Baseline](docs/new-project.md)
 - [Architecture: token layers, naming, pipeline](docs/architecture.md)
 - Foundations: [color](docs/foundations/color.md) · [typography](docs/foundations/typography.md) · [spacing & shape](docs/foundations/spacing.md) · [elevation](docs/foundations/elevation.md) · [interaction states](docs/foundations/interaction-states.md) · [motion](docs/foundations/motion.md) · [messaging (GAIWA)](docs/foundations/messaging.md) · [icons](docs/foundations/icons.md)
-- Components: [button](docs/components/button.md) · [input](docs/components/input.md) · [tag](docs/components/tag.md) · [callout](docs/components/callout.md) · [card](docs/components/card.md)
+- Components: [button](docs/components/button.md) · [icon button](docs/components/icon-button.md) · [input](docs/components/input.md) · [tag](docs/components/tag.md) · [callout](docs/components/callout.md) · [card](docs/components/card.md)
 
 ## Figma
 
-[Baseline – Foundation](https://www.figma.com/design/7v2384JjfFAJUEqUFEzM55/Baseline---Foundation): variables, text and effect styles, the brand color register, and the component pages (Icons, Button, Input, Tag, Callout, Card).
+[Baseline – Foundation](https://www.figma.com/design/7v2384JjfFAJUEqUFEzM55/Baseline---Foundation): variables, text and effect styles, the brand color register, and the component pages (Icons, Button + Icon Button, Input, Tag, Callout, Card).

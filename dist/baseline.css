@@ -849,7 +849,7 @@ a:hover { color: var(--color-text-link-hover); }
  *       <p class="bl-callout__title">Check this first</p>
  *       <p class="bl-callout__text">Something needs attention before it becomes a problem.</p>
  *     </div>
- *     <button class="bl-button bl-button--tertiary bl-button--sm bl-button--icon bl-callout__dismiss" aria-label="Dismiss">…x…</button>
+ *     <button class="bl-icon-button bl-icon-button--sm bl-callout__dismiss" aria-label="Dismiss">…x…</button>
  *   </div>
  * role="alert" is for Alert only (it interrupts screen readers). Text stays grey in every type. */
 
@@ -886,7 +886,7 @@ a:hover { color: var(--color-text-link-hover); }
   color: var(--color-text-strong);
 }
 .bl-callout__text { margin: 0; }
-.bl-callout__dismiss { margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0 0; --_fg: var(--color-text-subtle); }
+.bl-callout .bl-callout__dismiss { margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0 0; --_fg: var(--color-text-subtle); }
 
 .bl-callout--guide  { --_bg: var(--color-feedback-guide-bg);  --_border: var(--color-feedback-guide-border);  --_icon: var(--color-feedback-guide-icon); }
 .bl-callout--affirm { --_bg: var(--color-feedback-affirm-bg); --_border: var(--color-feedback-affirm-border); --_icon: var(--color-feedback-affirm-icon); }
@@ -939,6 +939,56 @@ a:hover { color: var(--color-text-link-hover); }
 
 /* Nested cards step the radius down one level and sit on the sunken surface. */
 .bl-card .bl-card { border-radius: var(--shape-radius-control); background: var(--color-surface-sunken); border-color: transparent; }
+
+/* Icon Button — mirrors Figma "Icon Button" (Size × State). Icon-only, Tertiary styling, square.
+ *   <button class="bl-icon-button" aria-label="Search"><svg aria-hidden="true" focusable="false"><use href="#i-magnifying-glass"/></svg></button>
+ *   <button class="bl-icon-button bl-icon-button--sm" aria-label="Dismiss">…</button>
+ *   <a class="bl-icon-button bl-icon-button--lg" href="/settings" aria-label="Settings">…</a>
+ * The accessible name is required: aria-label (or aria-labelledby) on the control, aria-hidden on the SVG.
+ * Private --_* properties hold the per-variant tokens; variants only swap them. */
+
+.bl-icon-button {
+  --_bg: transparent;
+  --_bg-hover: var(--color-surface-hover);
+  --_bg-pressed: var(--color-surface-pressed);
+  --_fg: var(--color-action-tertiary-fg);
+  --_size: var(--control-40);
+  --_icon: var(--icon-20);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: var(--_size);
+  height: var(--_size);
+  padding: 0;
+  border: var(--stroke-1) solid transparent;
+  border-radius: var(--shape-radius-control);
+  background: var(--_bg);
+  color: var(--_fg);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+.bl-icon-button:hover { background: var(--_bg-hover); color: var(--_fg); }
+.bl-icon-button:active { background: var(--_bg-pressed); }
+.bl-icon-button > svg { width: var(--_icon); height: var(--_icon); flex: none; fill: currentColor; pointer-events: none; }
+
+/* Sizes (Medium is the default) */
+.bl-icon-button--sm { --_size: var(--control-32); --_icon: var(--icon-16); }
+.bl-icon-button--lg { --_size: var(--control-48); --_icon: var(--icon-24); }
+
+/* Disabled — prefer aria-disabled so it stays focusable and its label is still announced. */
+.bl-icon-button:disabled,
+.bl-icon-button[aria-disabled="true"] {
+  --_bg-hover: transparent;
+  --_bg-pressed: transparent;
+  --_fg: var(--color-action-disabled-fg);
+  cursor: not-allowed;
+}
 
 /* Input — mirrors Figma "Input" (Default / Hover / Focus / Error / Disabled).
  *   <div class="bl-field">

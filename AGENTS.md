@@ -9,7 +9,7 @@ These rules apply to Claude, Copilot, Cursor and any other assistant editing UI 
 - `dist/` and `tokens/` are generated. Change values in Figma → export → `npm run build`. The exception is bootstrapping a new project's `tokens/theme.tokens.json`.
 
 ## Components
-- Reuse `bl-` classes (`bl-button`, `bl-field`/`bl-input`, `bl-tag`, `bl-callout`, `bl-card`) before writing new UI. Modifiers use `--` (`bl-button--secondary`, `bl-tag--alert`). Elements use `__` (`bl-card__title`).
+- Reuse `bl-` classes (`bl-button`, `bl-icon-button`, `bl-field`/`bl-input`, `bl-tag`, `bl-callout`, `bl-card`) before writing new UI. Modifiers use `--` (`bl-button--secondary`, `bl-tag--alert`). Elements use `__` (`bl-card__title`).
 - New component CSS follows the same pattern: private `--_*` custom properties set from semantic tokens, with variants that only reassign them.
 - One Primary button per view. Pill/round shapes come from `--shape-radius-*`; don't hardcode `border-radius`.
 
@@ -23,7 +23,7 @@ These rules apply to Claude, Copilot, Cursor and any other assistant editing UI 
 ## Accessibility
 - Keep the global `:focus-visible` ring. Never `outline: none` without an equivalent indicator.
 - Prefer `aria-disabled="true"` plus an explanation over `disabled` when the user needs to know why.
-- Icon-only buttons need `aria-label`; decorative SVGs need `aria-hidden="true"`.
+- Icon-only actions use `bl-icon-button` and **must** have an accessible name: `aria-label` (or `aria-labelledby`) on the control describing the action ("Close dialog", not "X"), and `aria-hidden="true" focusable="false"` on the SVG. Toggles keep one label and use `aria-pressed`. Never use `title` as the only label. Decorative SVGs elsewhere need `aria-hidden="true"`.
 - After changing any color token, run `npm run check`. It must pass.
 
 ## Icons
